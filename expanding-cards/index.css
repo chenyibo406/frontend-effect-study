@@ -1,0 +1,149 @@
+/* ----------------------------- GOOGLE FRONT ----------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");
+
+/* ----------------------------- RESET ----------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ----------------------------- BODY HTML MAIN ----------------------------- */
+body {
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* height: 100vh; */
+  font-family: "Lato";
+  height: 100%;
+  width: 100%;
+}
+
+/* todo: why set 100% height can't make the align-items center, but 100vh can */
+/* fix: because 100% would only expend the body element as the wrap in child
+element expend. But 100vh mean 100% view point height  */
+
+.main-container {
+  /* margin: 0 auto; */
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 5px solid rgb(89, 255, 0); */
+  padding: 80px;
+}
+
+/* todo: why even set main-container as height 100vh and width 100%, the inside
+child element can't be center and float to the top left? */
+/* fix: because only main-container set the flex, center. But the inside child 
+element don't. So after the main-container set height:100vh; width: 100%, the whole
+main-container expend, and the inside child element keep their position with main-container  */
+
+/* ----------------------------- CARD ----------------------------- */
+
+.card {
+  /* border: 5px solid red; */
+  height: 80vh;
+  width: 100%;
+  margin: 0 15px;
+  border-radius: 60px;
+  position: relative;
+  flex-basis: 100px;
+  flex: 0.5;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  transition: flex 0.7s ease-in;
+  /* flex-basis: 50px; */
+  /* flex-basis: 100px; */
+  /* transition: all 1s ease-in-out; */
+}
+
+h5 {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  font-size: 28px;
+  overflow: hidden;
+  /* display: none; */
+
+  opacity: 0;
+}
+
+.card.active {
+  /* display: initial; */
+  flex: 5;
+}
+
+.card.active h5 {
+  opacity: 1;
+  /* animation: show-text 1s ease-in-out; */
+  transition: opacity 0.3s ease-in 0.4s;
+}
+
+.card-1 {
+  background-image: url("./img/nature.jpg");
+}
+
+.card-2 {
+  background-image: url("./img/cliff.jpg");
+}
+
+.card-3 {
+  background-image: url("./img/seaworld.jpg");
+}
+
+.card-4 {
+  background-image: url("./img/under-the-sea.jpg");
+}
+
+.card-5 {
+  background-image: url("./img/travel.jpg");
+}
+
+/* @keyframes show-text {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  80% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+} */
+
+/* todo: how to set the default card width as a fixed number even as the other card expend? */
+/* fix: the default flex-shrinks is 1 */
+/* todo: how to make the other non click card flex: 1 as the card onclick and expend to flex: 5 */
+/* fix: set default card flex:1 or 0.5 and the click one as flex:5 */
+/* todo: how to make the other non click card h5 display none as the card onclick display the h5 element */
+/* fix: set the h5 default opacity as 0 and the onclick one as 1  */
+/* todo: how to set the first card default flex:5 and show the text and when click the other first card shrink as the others? */
+/* set active attribute fo flex: 5 and apply to first card element initially, as the card element click remove the active of all */
+
+/* todo: figure out the transition: opacity 0.3s ease-in 0.4s;  */
+/* fix: which mean it is an transition attribute
+first when the opacity changing, it would happen in 0.3s 
+and ease-in: slow at the beginning, fast/abrupt at the end
+0.4s mean the delay time when the changing happen to the animation
+begining */
+
+/* todo: figure out the  transition: flex 0.7s ease-in;  */
