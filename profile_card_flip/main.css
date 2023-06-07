@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  background: linear-gradient(135deg, #ee7b7b, #ffc6c6);
+}
+
+body {
+  /* background: linear-gradient(135deg, #ee7b7b, #ffc6c6); */
+  height: 100vh;
+  /* width: 100%; */
+  /* width: 0%; */
+  /* display: flex;
+  justify-items: center;
+  align-items: center; */
+
+  /* border: 5px solid black; */
+}
+
+/* remind: when only set the height and width of body as 100%,
+it would not show anything, because there is not parent and child 
+element of itself. */
+
+.main-container {
+  /* outline: red; */
+  border: 5px solid red;
+  /* width: 100%;
+  height: 100%; */
+  height: 100%;
+  /* border-radius: 30px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: #000; */
+}
+
+/* todo: why it would make the main-container attach to the left edge */
+/* The body actually is taking that width, and it is centering.
+ It's just a CSS quirk that makes the background occupy the 
+ whole page rather than the space actually occupied by the body element. */
+/* https://stackoverflow.com/questions/31818459/css-body-element-width-not-working */
+
+.card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+
+  /* backface-visibility: none; */
+  /* -webkit-backface-visibility: hidden;  */
+  /* backface-visibility: hidden; */
+}
+
+/* .back {
+  display: none;
+} */
+
+.front {
+  padding: 50px;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+
+  background-color: #bbb;
+  color: black;
+}
+
+.back,
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.front img {
+  width: 40%;
+}
+
+.name {
+  font-size: 60px;
+  line-height: 60px;
+}
+
+.last-name {
+  /* font-size: px; */
+  font-weight: 700;
+}
+
+/* -----------------BACK--------------------- */
+.back {
+  background: url("./images/PROFILE.jpg");
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+.card:hover .front {
+  transform: rotateY(180deg);
+}
