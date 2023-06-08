@@ -1,0 +1,128 @@
+/* ----------------------------- GOOGLE FRONT ----------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&display=swap");
+
+/* ----------------------------- RESET ----------------------------- */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ----------------------------- BODY HTML MAIN ----------------------------- */
+body {
+  font-family: "Lato";
+  height: 100vh;
+  width: 100%;
+
+  /* border: 2px solid red; */
+
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: center;
+}
+
+/* -----------------------------MAIN CONTAINER------------------------------- */
+.container {
+  text-align: center;
+}
+
+/* todo: why container set width 100% and height 100vh, 
+it would not be center of the body */
+/* fix: because inside the container, it have the child element 
+and the child element doesn't center itself even the container 
+was center itself. So when container set width: 100% and height 100vh
+, the whole container would expand itself and the child element would
+go to the top left position as it suppose to. */
+
+/* ----------------------  PROGRESSION CONTAINER ---------------------- */
+.progress-container {
+  display: flex;
+  justify-content: center;
+  font-size: 22px;
+  margin-bottom: 50px;
+  gap: 100px;
+  position: relative;
+
+  /* border: 5px solid crimson; */
+}
+
+.progress-container::before {
+  content: "";
+  background-color: rgb(123, 123, 123);
+  height: 7px;
+  width: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 0;
+
+  opacity: 0.3;
+  z-index: -1;
+}
+
+/* ----------------------  RPOGRESS ---------------------- */
+.progress {
+  position: absolute;
+  background-color: crimson;
+  height: 4px;
+  width: 0%;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  z-index: -1;
+  transition: 0.4s ease;
+}
+
+/* ----------------------  CIRCLE ---------------------- */
+
+.circle {
+  background: #fff;
+  border: 5px solid rgba(123, 123, 123, 0.445);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.active {
+  border: 5px solid crimson;
+}
+
+/* ----------------------  BUTTON ---------------------- */
+
+.btn {
+  background-color: crimson;
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn:disabled {
+  background-color: transparent;
+  cursor: not-allowed;
+}

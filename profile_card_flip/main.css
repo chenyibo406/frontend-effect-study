@@ -7,37 +7,38 @@
   box-sizing: border-box;
 }
 
+/* a {
+  text-decoration: none;
+  color: white;
+} */
+
 html {
-  background: linear-gradient(135deg, #ee7b7b, #ffc6c6);
 }
 
 body {
-  /* background: linear-gradient(135deg, #ee7b7b, #ffc6c6); */
+  background: linear-gradient(135deg, #ee7b7b, #ffc6c6);
+  width: 100%;
   height: 100vh;
-  /* width: 100%; */
-  /* width: 0%; */
-  /* display: flex;
-  justify-items: center;
-  align-items: center; */
-
-  /* border: 5px solid black; */
 }
 
 /* remind: when only set the height and width of body as 100%,
 it would not show anything, because there is not parent and child 
 element of itself. */
 
+/* remind: set body height as 100vh as 100 view point, set 100% of height 
+as the 100% as the child element. */
+
+/* remind: if don't set width of an element, an element would expand its size 
+as the longest child element */
+
+/* todo: why setting  background-repeat: no-repeat; it would only show a small
+part of the the background? */
+
 .main-container {
-  /* outline: red; */
-  border: 5px solid red;
-  /* width: 100%;
-  height: 100%; */
   height: 100%;
-  /* border-radius: 30px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background: #000; */
 }
 
 /* todo: why it would make the main-container attach to the left edge */
@@ -48,62 +49,157 @@ element of itself. */
 
 .card {
   background-color: transparent;
-  width: 300px;
-  height: 200px;
-  border: 1px solid #f1f1f1;
-
-  /* backface-visibility: none; */
-  /* -webkit-backface-visibility: hidden;  */
-  /* backface-visibility: hidden; */
+  /* border: 5px solid red; */
+  width: 450px;
+  height: 600px;
 }
 
-/* .back {
-  display: none;
-} */
+.card-inner img {
+  width: 40%;
+}
 
-.front {
-  padding: 50px;
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transition: transform 0.6s;
   transform-style: preserve-3d;
-  transition: transform 0.8s;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 
-  background-color: #bbb;
-  color: black;
+  border-radius: 30px;
 }
 
-.back,
-.front {
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+/* ---------------- FRONT & BACK --------------- */
+.front,
+.back {
+  padding: 30px;
   position: absolute;
   width: 100%;
   height: 100%;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
+
+  border-radius: 30px;
 }
 
-.front img {
-  width: 40%;
+/* -----------------FRONT--------------------- */
+
+.front {
+  /* display: none; */
+  background: url("./images/PROFILE.jpg");
+  background-position: center;
+  background-size: cover;
+
+  /* position: relative; */
 }
 
-.name {
-  font-size: 60px;
-  line-height: 60px;
+.front .content {
+  /* position: absolute;
+  bottom: 10; */
+  /* border: 5px solid red; */
+
+  position: absolute;
+  bottom: 30px;
+  color: white;
 }
 
-.last-name {
-  /* font-size: px; */
-  font-weight: 700;
+.front .content h3 {
+  font-size: 32px;
+}
+
+.front a {
+  margin-top: 10px;
+  border-radius: 20px;
+  padding: 10px 30px;
+  /* width: 200px;
+  height: 40px; */
+  border: 2px solid white;
+  text-decoration: none;
+  color: white;
+  display: inline-block;
 }
 
 /* -----------------BACK--------------------- */
-.back {
-  background: url("./images/PROFILE.jpg");
-  position: relative;
-  width: 100%;
-  height: 100%;
-  text-align: center;
-  transition: transform 0.8s;
-  transform-style: preserve-3d;
-}
 
-.card:hover .front {
+.back {
+  background-color: black;
   transform: rotateY(180deg);
 }
+.name {
+  font-size: 60px;
+  line-height: 55px;
+}
+.last-name {
+  font-weight: 700;
+}
+
+/* -about- */
+.about {
+  font-size: 20px;
+  margin-top: 20px;
+  color: rgb(120, 120, 120);
+}
+
+/* -hero- */
+.hero {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* align-items: center; */
+  text-align: center;
+  /* gap: 40px; */
+  margin: 40px 0;
+  font-size: 20px;
+
+  color: rgb(83, 83, 83);
+}
+
+.hero > * {
+  flex: 1;
+  /* border: 2px solid red; */
+}
+
+.hero > *:not(:last-child) h3 {
+  border-right: 5px solid crimson;
+}
+
+.social-media {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.btn {
+  background: #ee7b7b;
+  width: 120px;
+  height: 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  outline: none;
+  border: none;
+}
+
+.social-media i {
+  font-size: 30px;
+}
+
+/* todo: what is the perspective do in css */
+/* fix: The perspective CSS property determines the 
+distance between the z=0 plane and the user in
+order to give a 3D-positioned element some perspective. */
+
+/* todo: what is the backface-visibility? */
+/* An element's back face is a mirror image of its front face. 
+Though invisible in 2D, the back face can become visible when 
+a transformation causes the element to be rotated in 3D space.
+(This property has no effect on 2D transforms, which have no perspective.) */
+
+/* todo: what is the preserve-3d?  */
+/* 
+preserve-3d
+Indicates that the children of the element should be positioned in the 3D-space. */

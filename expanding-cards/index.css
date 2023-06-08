@@ -33,6 +33,7 @@ body {
 /* fix: because 100% would only expend the body element as the wrap in child
 element expend. But 100vh mean 100% view point height  */
 
+/* -----------------------------MAIN CONTAINER------------------------------- */
 .main-container {
   /* margin: 0 auto; */
   height: 100vh;
