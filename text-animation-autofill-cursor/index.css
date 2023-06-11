@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&family=Roboto:wght@400;500;700;900&family=Tilt+Neon&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  width: max-content;
+  position: relative;
+  font-size: 5em;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  color: transparent;
+  -webkit-text-stroke: 3px #383d52;
+}
+
+/* The max-content sizing keyword represents 
+the intrinsic maximum width or height of the content. 
+For text content this means that the content will not wrap
+ at all even if it causes overflows. */
+
+h2::before {
+  content: "Animation";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+
+  height: 100%;
+  color: #0a2aa8;
+  -webkit-text-stroke: 0px #383d52;
+  overflow: hidden;
+
+  border-right: 2px solid #0a2aa8;
+
+  animation: ease animate 6s infinite;
+}
+
+@keyframes animate {
+  0% {
+    width: 0%;
+  }
+  17% {
+    width: 60%;
+  }
+  34% {
+    width: 40%;
+  }
+  51% {
+    width: 90%;
+  }
+  68% {
+    width: 80%;
+  }
+  85% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+  }
+}
+
+/* .text:hover::before {
+  width: 100%;
+} */
