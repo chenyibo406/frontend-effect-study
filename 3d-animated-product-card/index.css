@@ -98,9 +98,11 @@ img {
 .images {
   width: 35rem;
   position: absolute;
-  top: -5rem;
+  top: -12rem;
   left: 6rem;
 }
+
+/* todo: why image don't move after changing left */
 
 .images {
   animation: up-down 3s infinite;
