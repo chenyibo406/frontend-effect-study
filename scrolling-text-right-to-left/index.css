@@ -1,0 +1,220 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.scroll-container {
+  border: 3px solid black;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 20%;
+  padding: 30px;
+  white-space: nowrap;
+  font-size: 60px;
+}
+
+/* .scroll-container-b-t {
+  border: 3px solid black;
+  border-radius: 5px;
+  height: 100px;
+  overflow: hidden;
+
+  width: 20%;
+  padding: 30px;
+
+  white-space: nowrap;
+  font-size: 60px;
+} */
+
+#scroll-text-r-l {
+  /* animation properties */
+
+  -moz-transform: translateX(100%);
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+
+  -moz-animation: right-left 15s linear infinite;
+  -webkit-animation: right-left 15s linear infinite;
+  animation: right-left 15s linear infinite;
+}
+
+#scroll-text-l-r {
+  text-align: right;
+
+  /* animation properties */
+  -moz-transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transform: translateX(-100%);
+
+  -moz-animation: left-right 15s linear infinite;
+  -webkit-animation: left-right 15s linear infinite;
+  animation: left-right 15s linear infinite;
+}
+
+#scroll-text-b-t {
+  height: 100%;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(100%);
+  -webkit-transform: translateY(100%);
+  transform: translateY(100%);
+
+  -moz-animation: bottom-top 5s linear infinite;
+  -webkit-animation: bottom-top 5s linear infinite;
+  animation: bottom-top 5s linear infinite;
+}
+
+#scroll-text-t-b {
+  height: 100%;
+  text-align: center;
+
+  /* animation properties */
+  -moz-transform: translateY(-100%);
+  -webkit-transform: translateY(-100%);
+  transform: translateY(-100%);
+
+  -moz-animation: top-bottom 5s linear infinite;
+  -webkit-animation: top-bottom 5s linear infinite;
+  animation: top-bottom 5s linear infinite;
+}
+
+/* for Firefox */
+@-moz-keyframes top-bottom {
+  from {
+    -moz-transform: translateY(-100%);
+  }
+  to {
+    -moz-transform: translateY(100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes top-bottom {
+  from {
+    -webkit-transform: translateY(-100%);
+  }
+  to {
+    -webkit-transform: translateY(100%);
+  }
+}
+
+@keyframes top-bottom {
+  from {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+  to {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+}
+
+/* for Firefox */
+@-moz-keyframes right-left {
+  from {
+    -moz-transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes right-left {
+  from {
+    -webkit-transform: translateX(100%);
+  }
+  to {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+@keyframes right-left {
+  from {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+  to {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+}
+
+/* for Firefox */
+@-moz-keyframes left-right {
+  from {
+    -moz-transform: translateX(-100%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes left-right {
+  from {
+    -webkit-transform: translateX(-100%);
+  }
+  to {
+    -webkit-transform: translateX(100%);
+  }
+}
+
+@keyframes left-right {
+  from {
+    -moz-transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+  }
+  to {
+    -moz-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    transform: translateX(100%);
+  }
+}
+
+/* for Firefox */
+@-moz-keyframes bottom-top {
+  from {
+    -moz-transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+  }
+}
+
+/* for Chrome */
+@-webkit-keyframes bottom-top {
+  from {
+    -webkit-transform: translateY(100%);
+  }
+  to {
+    -webkit-transform: translateY(-100%);
+  }
+}
+
+@keyframes bottom-top {
+  from {
+    -moz-transform: translateY(100%);
+    -webkit-transform: translateY(100%);
+    transform: translateY(100%);
+  }
+  to {
+    -moz-transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    transform: translateY(-100%);
+  }
+}

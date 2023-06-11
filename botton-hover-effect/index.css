@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #333;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+li {
+  color: orange;
+  font-size: 25px;
+  width: 8em;
+  height: 2em;
+  border-left: 0.08em solid;
+  position: relative;
+  margin-top: 0.8em;
+  cursor: pointer;
+  /* border: 2px solid red; */
+}
+
+li::before,
+li::after {
+  content: "";
+  position: absolute;
+  width: inherit;
+  border-left: inherit;
+  z-index: -1;
+}
+
+li::before {
+  height: 80%;
+  top: 10%;
+  left: calc(-0.15em - 0.08em * 2);
+  filter: brightness(0.8);
+}
+
+li::after {
+  height: 60%;
+  top: 20%;
+  left: calc(-0.15em * 2 - 0.08em * 3);
+  filter: brightness(0.6);
+}
+
+li span {
+  position: relative;
+  height: 120%;
+  top: -10%;
+  box-sizing: border-box;
+  border: 0.08em solid;
+  background-color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  text-transform: capitalize;
+  transform: translateX(calc(-0.15em * 3 - 0.08em * 2));
+  transition: 0.3s;
+
+  /* border: 5px solid orange; */
+}
+
+/* li::before, li::after position are both absolute */
+/* so li::before and li::after are absolute to relative of li span */
+/* as li span set background-color: #333, it would cover li::before, li::after  */
+/* li element set width, but but didn't set border top bottom and right.
+so li span element cover the whole li, li:before and li:after */
+
+/* li span border: 0.08em solid define the li border as well */
+
+li:hover span {
+  transform: translateX(0.15em);
+}
